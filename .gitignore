@@ -1,0 +1,5 @@
+env
+.mypy_cache
+.ipynb_checkpoints
+exp2.egg_info/**
+**/__init__.cpython
