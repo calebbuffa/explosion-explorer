@@ -1,1 +1,1 @@
-web: voila --port=$33329 --no-browser app/app.ipynb
+web: voila app/app.ipynb
