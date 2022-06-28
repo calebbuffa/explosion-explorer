@@ -180,7 +180,7 @@ def sar_difference(before, after, geometry):
 
         print(f"Image {i} Done")
 
-    sar_df = pd.DataFrame(
+    return pd.DataFrame(
         list(
             zip(
                 mean_list,
@@ -202,8 +202,6 @@ def sar_difference(before, after, geometry):
             "SAR_max",
         ],
     )
-
-    return sar_df
 
 
 def ndvi(before, after, geometry):
@@ -317,7 +315,7 @@ def ndvi_difference(before, after, geometry):
 
         print(f"mage {i} Done")
 
-    ndvi_df = pd.DataFrame(
+    return pd.DataFrame(
         list(
             zip(
                 p25_list,
@@ -339,7 +337,6 @@ def ndvi_difference(before, after, geometry):
             "NDVI_max",
         ],
     )
-    return ndvi_df
 
 
 def nbr(before, after, geometry):
@@ -439,7 +436,7 @@ def nbr_difference(before, after, geometry):
     min_list = []
     max_list = []
 
-    for i in range(0, len(before)):
+    for i in range(len(before)):
         p25, p50, p75, mean, stddev, min, max = nbr(
             before[i], after[i], geometry[i]
         )
@@ -453,7 +450,7 @@ def nbr_difference(before, after, geometry):
 
         print(f"Image {i} Done")
 
-    nbr_df = pd.DataFrame(
+    return pd.DataFrame(
         list(
             zip(
                 p25_list,
@@ -475,7 +472,6 @@ def nbr_difference(before, after, geometry):
             "NBR_max",
         ],
     )
-    return nbr_df
 
 
 def evi(before, after, geometry):
@@ -591,7 +587,7 @@ def evi_difference(before, after, geometry):
     min_list = []
     max_list = []
 
-    for i in range(0, len(before)):
+    for i in range(len(before)):
         p25, p50, p75, mean, stddev, min, max = evi(
             before[i], after[i], geometry[i]
         )
@@ -605,7 +601,7 @@ def evi_difference(before, after, geometry):
 
         print(f"mage {i} Done")
 
-    evi_df = pd.DataFrame(
+    return pd.DataFrame(
         list(
             zip(
                 p25_list,
@@ -627,4 +623,3 @@ def evi_difference(before, after, geometry):
             "EVI_max",
         ],
     )
-    return evi_df
